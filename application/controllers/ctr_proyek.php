@@ -10,7 +10,6 @@ class ctr_proyek extends CI_Controller
         $data['perusahaan'] = $this->m_perusahaan->get_nama_perusahaan(array('status_perusahaan' => 'Y'));
         $data['jenisproyek'] = $this->m_jenisproyek->get_nama_jenisproyek(array('status_jenis_proyek' => 'Y'));
         $data['proyek'] = $this->m_proyek->get_all();
-        // $data['id_proyek'] = $this->m_proyek->genId();
 
         $this->load->view('firstpage', $data);
 	}
@@ -24,7 +23,7 @@ class ctr_proyek extends CI_Controller
         echo $increment;
     }
 
-	public function tambah_ubah() {
+    public function tambah_ubah() {
         $id = $this->input->post('id_proyek');
         $perusahaan = $this->input->post('perusahaan');
         $jenisproyek = $this->input->post('jenisproyek');
@@ -45,6 +44,25 @@ class ctr_proyek extends CI_Controller
                 $this->session->set_flashdata('pesan', '<b>Berhasil!</b> Data proyek telah disimpan.');
         } else {
                 $this->session->set_flashdata('pesan', '<b>Gagal!</b> Data proyek gagal disimpan.');
+        }
+        redirect('ctr_proyek');
+    }
+
+	public function update_ubah() {
+        $id = $this->input->post('id_proyek');
+        $perusahaan = $this->input->post('perusahaan');
+        $jenisproyek = $this->input->post('jenisproyek');
+        $deskripsi = $this->input->post('deskripsi');
+        $tgl_penerimaan = $this->input->post('tgl_penerimaan');
+        $est_waktu = $this->input->post('est_waktu');
+        $est_biaya = $this->input->post('est_biaya');
+        
+        $act = $this->m_proyek->edit($id, $perusahaan, $jenisproyek, $deskripsi, $tgl_penerimaan, $est_waktu, $est_biaya);
+        
+        if ($act > 0) {
+                $this->session->set_flashdata('pesan', '<b>Berhasil!</b>Perubahan data proyek telah disimpan.');
+        } else {
+                $this->session->set_flashdata('pesan', '<b>Gagal!</b>Perubahan data proyek gagal disimpan.');
         }
         redirect('ctr_proyek');
     }
@@ -70,10 +88,13 @@ class ctr_proyek extends CI_Controller
     }
 
     public function ubah($id) {
-        $data['isi'] = 'master/perusahaan_update';
+        $data['isi'] = 'master/proyek_update';
 
-        $data['perusahaan'] = $this->m_proyek->get_id($id)[0];
+        $data['perusahaan'] = $this->m_perusahaan->get_nama_perusahaan(array('status_perusahaan' => 'Y'));
+        $data['jenisproyek'] = $this->m_jenisproyek->get_nama_jenisproyek(array('status_jenis_proyek' => 'Y'));
+        $data['proyek'] = $this->m_proyek->get_all();
 
+        $data['p'] = $this->m_proyek->get_id($id)[0];
         $this->load->view('firstpage', $data);
     }
 }

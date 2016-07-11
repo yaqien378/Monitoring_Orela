@@ -59,7 +59,7 @@
           <div class="ln_solid"></div>
           <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-              <button type="reset" class="btn btn-primary">Cancel</button>
+              <button type="button" class="btn btn-primary" onclick="location.reload()">Cancel</button>
               <button type="submit" class="btn btn-success">Submit</button>
             </div>
           </div>
@@ -134,6 +134,7 @@
 <!-- /data table master task -->
 </div>
 <!-- /page content -->
+
 <script type="text/javascript">
   function get_increment(nama_maintask) {
     var increment = 0;
@@ -161,12 +162,5 @@
       var id = generate_id(id1);
       $("#id_task").val(id);
     });
-    
-    // $("#jenisproyek").change(function() {
-    //   var id1 = $("#perusahaan").val();
-    //   var id2 = $(this).val();
-    //   var id = generate_id(id1, id2);
-    //   $("#id_proyek").val(id);
-    // });
   });
 </script>

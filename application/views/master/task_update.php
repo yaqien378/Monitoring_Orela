@@ -21,7 +21,7 @@
       </div>
       <div class="x_content">
         <br />
-        <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url().'index.php/ctr_task/tambah_ubah' ?>">
+        <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url().'index.php/ctr_task/Update_task' ?>">
 
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">ID </label>
@@ -39,7 +39,7 @@
           <div class="ln_solid"></div>
           <div class="form-group">
             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-              <button type="reset" class="btn btn-primary">Cancel</button>
+            <a href="<?php echo base_url() ?>ctr_task" class="btn btn-primary">Cancel</a>
               <button type="submit" class="btn btn-success">Submit</button>
             </div>
           </div>

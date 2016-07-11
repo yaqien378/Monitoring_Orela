@@ -30,7 +30,7 @@
       </div>
       <div class="x_content">
         <br />
-        <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url().'index.php/ctr_proyek/tambah_ubah' ?>">
+        <form class="form-horizontal form-label-left" method="post" action="<?php echo base_url().'index.php/ctr_proyek/update_ubah' ?>">
 
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Perusahaan</label>
@@ -76,7 +76,7 @@
             <label class="control-label col-md-3 col-sm-3 col-xs-3">Estimasi Waktu
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="est_waktu" name="est_waktu" type="text" name class="form-control">
+              <input id="est_waktu" name="est_waktu" type="number" name class="form-control">
             </div>
           </div>
           <div class="form-group">

@@ -45,7 +45,7 @@ class m_proyek extends CI_Model {
             ));
     }
 
-    public function edit($id, $perusahaan, $jenisproyek, $deskripsi, $tgl_penerimaan, $est_waktu, $est_biaya, $status, $progress)
+    public function edit($id, $perusahaan, $jenisproyek, $deskripsi, $tgl_penerimaan, $est_waktu, $est_biaya)
     {
         $this->db->where('id_proyek', $id);
         return $this->db->update('project', array(
@@ -55,8 +55,6 @@ class m_proyek extends CI_Model {
             'tanggal_penerimaan_proyek' => $tgl_penerimaan,
             'estimasi_waktu_proyek' => $est_waktu,
             'estimasi_biaya_proyek' => $est_biaya,
-            'status_proyek' => $status,
-            'progress_proyek' => $progress
             ));
     }
 

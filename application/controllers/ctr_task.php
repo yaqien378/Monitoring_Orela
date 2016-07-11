@@ -22,7 +22,7 @@ class ctr_task extends CI_Controller
         echo $increment;
     }
 
-	public function tambah_ubah() {
+    public function tambah_ubah() {
         $id = $this->input->post('id_task');
         $maintask = $this->input->post('maintask');
         $nama = $this->input->post('nama');
@@ -34,6 +34,20 @@ class ctr_task extends CI_Controller
         else
             $act = $this->m_task->add($id, $nama, $maintask, $status);
         
+        if ($act > 0) {
+                $this->session->set_flashdata('pesan', '<b>Berhasil!</b> Data task telah disimpan.');
+        } else {
+                $this->session->set_flashdata('pesan', '<b>Gagal!</b> Data task gagal disimpan.');
+        }
+        redirect('ctr_task');
+    }
+    
+
+	public function Update_task() {
+        $id = $this->input->post('id');
+        $nama = $this->input->post('nama');
+
+        $act = $this->m_task->edit($id, $nama);
         if ($act > 0) {
                 $this->session->set_flashdata('pesan', '<b>Berhasil!</b> Data task telah disimpan.');
         } else {
@@ -69,5 +83,15 @@ class ctr_task extends CI_Controller
 
         $this->load->view('firstpage', $data);
     }
+
+    // public function set_id_task()
+    // {
+    //     $id_main = $this->input->post('id_main');
+    //     $main = substr($id_main, 3);
+
+    //     $increment = $this->m_task->get_increment($id_main);
+    //     echo $increment;
+    //     //mendapatkan id terakhir;
+    // }
 }
 ?>

@@ -40,13 +40,11 @@ class m_task extends CI_Model {
             ));
     }
 
-    public function edit($id, $nama, $maintask, $status)
+    public function edit($id, $nama)
     {
         $this->db->where('id_task', $id);
         return $this->db->update('task', array(
-            'id_main_task' => $maintask,
-            'nama_task' => $nama,
-            'status_task' => $status
+            'nama_task' => $nama
             ));
     }
 
@@ -65,6 +63,7 @@ class m_task extends CI_Model {
         $this->db->select("coalesce(substring(id_task from 10 for 3)::integer + 1, 0) as id");
         $this->db->from("task");
         $this->db->where("id_main_task = '".$maintask."'");
+        $this->db->order_by("id","DESC");
         $hasil = $this->db->get()->result();
         if(count($hasil) > 0) 
             return $hasil[0]->id;

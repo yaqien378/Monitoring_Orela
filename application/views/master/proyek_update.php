@@ -26,47 +26,55 @@
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Perusahaan</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="perusahaan" name="perusahaan" type="text" class="form-control" value="<?php echo $p->id_perusahaan; ?>" readonly="readonly"><?php echo $p->nama_perusahaan; ?>
+              <select id="perusahaan" name="perusahaan" class="select2_single form-control">
+                <?php foreach($perusahaan as $pr) { ?>
+                  <option value="<?php echo $pr->id_perusahaan; ?>" <?php echo $pr->id_perusahaan==$p->id_perusahaan?'selected':''; ?>><?php echo $pr->nama_perusahaan; ?></option>
+                <?php } ?>
+              </select>
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Proyek</label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="jenisproyek" name="jenisproyek" type="text" class="form-control" value="<?php echo $jpro->id_jenis_proyek; ?>" readonly="readonly"><?php echo $jpro->nama_jenis_proyek; ?>
+              <select id="jenisproyek" name="jenisproyek" class="select2_single form-control">
+                <?php foreach($jenisproyek as $jpro) { ?>
+                  <option value="<?php echo $jpro->id_jenis_proyek; ?>" <?php echo $jpro->id_jenis_proyek==$p->id_jenis_proyek?'selected':''; ?> ><?php echo $jpro->nama_jenis_proyek; ?></option>
+                <?php } ?>
+              </select>
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12">ID </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="id_proyek" name="id_proyek" type="text" class="form-control" value="<?php echo $proyek->id_proyek; ?>" readonly="readonly">
+              <input id="id_proyek" name="id_proyek" type="text" class="form-control" readonly="readonly" value="<?php echo $p->id_proyek; ?>">
             </div>
           </div>
           <div class="item form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Deskripsi 
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="deskripsi" name="deskripsi" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" required="required" type="text" value="<?php echo $proyek->deskripsi_proyek; ?>">
+              <input id="deskripsi" name="deskripsi" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" required="required" type="text" value="<?php echo $p->deskripsi_proyek; ?>">
             </div>
           </div>
           <div class="item form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">Tanggal Penerimaan 
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input type="date" id="tgl_penerimaan" name="tgl_penerimaan" class="form-control col-md-7 col-xs-12" required="required" type="text" value="<?php echo $proyek->tgl_penerimaan_proyek; ?>">
+              <input type="date" id="tgl_penerimaan" name="tgl_penerimaan" class="form-control col-md-7 col-xs-12" required="required" type="text" value="<?php echo $p->tanggal_penerimaan_proyek; ?>">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-3">Estimasi Waktu
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="est_waktu" name="est_waktu" type="number" name class="form-control" value="<?php echo $proyek->estimasi_waktu_proyek; ?>">
+              <input id="est_waktu" name="est_waktu" type="number" name class="form-control" value="<?php echo $p->estimasi_waktu_proyek; ?>">
             </div>
           </div>
           <div class="form-group">
             <label class="control-label col-md-3 col-sm-3 col-xs-3">Estimasi Biaya
             </label>
             <div class="col-md-6 col-sm-6 col-xs-12">
-              <input id="est_biaya" name="est_biaya" type="number" name class="form-control" value="<?php echo $proyek->estimasi_biaya_proyek; ?>">
+              <input id="est_biaya" name="est_biaya" type="text" name class="form-control" value="<?php echo $p->estimasi_biaya_proyek; ?>">
             </div>
           </div>
           <div class="ln_solid"></div>

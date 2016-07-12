@@ -26,7 +26,7 @@
         </li>
         <li><a><i class="fa fa-laptop"></i> Planning <span class="fa fa-chevron-down"></span></a>
           <ul class="nav child_menu">
-            <li><a href="general_elements.html">Schedule</a>
+            <li><a href="<?php echo base_url(); ?>planning">Schedule</a>
             </li>
             <li><a href="media_gallery.html">Budget</a>
             </li>

@@ -64,6 +64,7 @@ class m_encoretask extends CI_Model {
         $this->db->select("coalesce(substring(id_encore_task from 10 for 3)::integer + 1, 0) as id");
         $this->db->from("encore_task");
         $this->db->where("id_task = '".$task."'");
+        $this->db->order_by("id","DESC");
         $hasil = $this->db->get()->result();
         if(count($hasil) > 0) 
             return $hasil[0]->id;

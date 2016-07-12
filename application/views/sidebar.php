@@ -28,7 +28,7 @@
           <ul class="nav child_menu">
             <li><a href="<?php echo base_url(); ?>planning">Schedule</a>
             </li>
-            <li><a href="media_gallery.html">Budget</a>
+            <li><a href="<?php echo base_url(); ?>planning/budget">Budget</a>
             </li>
           </ul>
         </li>

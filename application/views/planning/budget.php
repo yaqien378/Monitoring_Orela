@@ -13,7 +13,7 @@
   <div class="col-md-12 col-sm-12 col-xs-12">
     <div class="x_panel">
       <div class="x_title">
-        <h2>Planning Schedule</h2>
+        <h2>Planning Budget</h2>
         <ul class="nav navbar-right panel_toolbox">
           <li><a class="collapse-link"></a>
           </li>
@@ -76,15 +76,13 @@
             <thead>
               <tr>
                 <th>Nama Perusahaan</th>
+                <th>Material</th>
+                <th>Harga</th>
                 <th>Tanggal Mulai</th>
                 <th>Durasi</th>
                 <th>Tanggal Selesai</th>
-                <th>Est Waktu Tenaga Kerja</th>
-                <th>Tarif Tenaga Kerja</th>
-                <th>Jumlah Tenaga Kerja</th>
-                <th>Biaya Tenaga Kerja</th>
-                <th>Biaya Lain</th>
-                <th>Biaya Total</th>
+                <th>Jumlah Material</th>
+                <th>Total Biaya</th>
                 <th>Opsi</th>
               </tr>
             </thead>
@@ -92,8 +90,6 @@
             <tbody>
               <tr>
                 <td style="text-align:center"><strong>Main Task</strong></td>
-                <td></td>
-                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -114,12 +110,13 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
                 <td style="text-align: center;">
                   <div class="hidden-sm hidden-xs action-buttons">
                     <a class="red" href="<?php echo base_url(); ?>" >
                         <i class="ace-icon fa fa-times bigger-130"></i>
+                    </a>
+                    <a class="blue" href="#">
+                        <i class="fa fa-plus bigger-130"></i>  
                     </a>
                   </div>
                 </td>
@@ -128,6 +125,12 @@
               <tr>
                 <td>Encore Task 1</td>
                 <td style="text-align:center">
+                  <input type="text" name="material" id="material" class="form-control">
+                </td>
+                <td style="text-align:center">
+                  <input type="number" name="harga" id="harga" class="form-control">
+                </td>
+                <td style="text-align:center">
                   <input type="date" name="tgl_mulai" id="tgl_mulai" class="form-control">
                 </td>
                 <td style="text-align:center">
@@ -137,19 +140,7 @@
                   <span><strong>mm/dd/yy</strong></span>
                 </td>
                 <td style="text-align:center">
-                  <input type="number" name="waktu_tk" id="waktu_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="tarif_tk" id="tarif_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="jumlah_tk" id="jumlah_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <span><strong>0</strong></span>
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="biaya_lain" id="biaya_lain" class="form-control">
+                  <input type="number" name="jumlah_material" id="jumlah_material" class="form-control">
                 </td>
                 <td style="text-align:center"><span><strong>0</strong></span></td>
                 <td style="text-align: center;">
@@ -160,10 +151,16 @@
                   </div>
                 </td>
               </tr>
-            
+
               <tr>
                 <td>Encore Task 2</td>
                 <td style="text-align:center">
+                  <input type="text" name="material" id="material" class="form-control">
+                </td>
+                <td style="text-align:center">
+                  <input type="number" name="harga" id="harga" class="form-control">
+                </td>
+                <td style="text-align:center">
                   <input type="date" name="tgl_mulai" id="tgl_mulai" class="form-control">
                 </td>
                 <td style="text-align:center">
@@ -173,19 +170,7 @@
                   <span><strong>mm/dd/yy</strong></span>
                 </td>
                 <td style="text-align:center">
-                  <input type="number" name="waktu_tk" id="waktu_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="tarif_tk" id="tarif_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="jumlah_tk" id="jumlah_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <span><strong>0</strong></span>
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="biaya_lain" id="biaya_lain" class="form-control">
+                  <input type="number" name="jumlah_material" id="jumlah_material" class="form-control">
                 </td>
                 <td style="text-align:center"><span><strong>0</strong></span></td>
                 <td style="text-align: center;">
@@ -196,7 +181,7 @@
                   </div>
                 </td>
               </tr>
- 
+
               <tr>
                 <td><strong>Task 2</strong></td>
                 <td></td>
@@ -206,12 +191,13 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td></td>
-                <td></td>
                 <td style="text-align: center;">
                   <div class="hidden-sm hidden-xs action-buttons">
                     <a class="red" href="<?php echo base_url(); ?>" >
                         <i class="ace-icon fa fa-times bigger-130"></i>
+                    </a>
+                    <a class="blue" href="#">
+                        <i class="fa fa-plus bigger-130"></i>  
                     </a>
                   </div>
                 </td>
@@ -220,6 +206,12 @@
               <tr>
                 <td>Encore Task 1</td>
                 <td style="text-align:center">
+                  <input type="text" name="material" id="material" class="form-control">
+                </td>
+                <td style="text-align:center">
+                  <input type="number" name="harga" id="harga" class="form-control">
+                </td>
+                <td style="text-align:center">
                   <input type="date" name="tgl_mulai" id="tgl_mulai" class="form-control">
                 </td>
                 <td style="text-align:center">
@@ -229,19 +221,7 @@
                   <span><strong>mm/dd/yy</strong></span>
                 </td>
                 <td style="text-align:center">
-                  <input type="number" name="waktu_tk" id="waktu_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="tarif_tk" id="tarif_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="jumlah_tk" id="jumlah_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <span><strong>0</strong></span>
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="biaya_lain" id="biaya_lain" class="form-control">
+                  <input type="number" name="jumlah_material" id="jumlah_material" class="form-control">
                 </td>
                 <td style="text-align:center"><span><strong>0</strong></span></td>
                 <td style="text-align: center;">
@@ -252,10 +232,16 @@
                   </div>
                 </td>
               </tr>
-            
+
               <tr>
                 <td>Encore Task 2</td>
                 <td style="text-align:center">
+                  <input type="text" name="material" id="material" class="form-control">
+                </td>
+                <td style="text-align:center">
+                  <input type="number" name="harga" id="harga" class="form-control">
+                </td>
+                <td style="text-align:center">
                   <input type="date" name="tgl_mulai" id="tgl_mulai" class="form-control">
                 </td>
                 <td style="text-align:center">
@@ -265,19 +251,7 @@
                   <span><strong>mm/dd/yy</strong></span>
                 </td>
                 <td style="text-align:center">
-                  <input type="number" name="waktu_tk" id="waktu_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="tarif_tk" id="tarif_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="jumlah_tk" id="jumlah_tk" class="form-control">
-                </td>
-                <td style="text-align:center">
-                  <span><strong>0</strong></span>
-                </td>
-                <td style="text-align:center">
-                  <input type="number" name="biaya_lain" id="biaya_lain" class="form-control">
+                  <input type="number" name="jumlah_material" id="jumlah_material" class="form-control">
                 </td>
                 <td style="text-align:center"><span><strong>0</strong></span></td>
                 <td style="text-align: center;">
@@ -288,12 +262,12 @@
                   </div>
                 </td>
               </tr>
-            
+
             </tbody>
           </table>
           </div>
         </div><!-- end row -->
-
+        
         <div class="row">
           <div class="col-md-12">
             <div class="pull-right">
@@ -301,6 +275,7 @@
             </div>
           </div>
         </div>
+
 
       </div>
     </div>

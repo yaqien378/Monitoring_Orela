@@ -8,9 +8,16 @@ class planning extends CI_Controller
         redirect('planning/schedule');
     }
 
-	public function schedule() 
+    public function schedule() 
+    {
+        $data['isi'] = 'planning/schedule';
+
+        $this->load->view('firstpage', $data);
+    }
+
+	public function budget() 
 	{
-		$data['isi'] = 'planning/schedule';
+		$data['isi'] = 'planning/budget';
 
         $this->load->view('firstpage', $data);
 	}

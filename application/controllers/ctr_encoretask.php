@@ -41,6 +41,22 @@ class ctr_encoretask extends CI_Controller
         }
         redirect('ctr_encoretask/index/'.$task);
     }
+
+    public function Update_encoretask() {
+        $id = $this->input->post('id_encore_task');;
+        $nama = $this->input->post('nama');
+        
+        $task = 'TASK'.substr($id, 2,6);
+        $act = $this->m_encoretask->edit($id, $nama);
+        if ($act > 0) {
+                echo 'ok';
+                $this->session->set_flashdata('pesan', '<b>Berhasil!</b> Data encore task telah disimpan.');
+        } else {
+                echo 'tidak ok';
+                $this->session->set_flashdata('pesan', '<b>Gagal!</b> Data encore task gagal disimpan.');
+        }
+        redirect('ctr_encoretask/index/'.$task);
+    }
     
     public function activate($id) {
         $check = $this->m_encoretask->get_id($id)[0]->status_task;

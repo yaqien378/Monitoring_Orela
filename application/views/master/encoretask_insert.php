@@ -105,9 +105,6 @@
               <td><?php echo $et->status_encore_task=="Y"?"Aktif":"Non-Aktif"; ?></td>
               <td style="text-align: center;">
                 <div class="hidden-sm hidden-xs action-buttons">
-                  <a class='blue'>
-                    <i class="ace-icon fa fa-file bigger-130"></i>
-                  </a>
                   <a class="green" href="<?php echo base_url().'index.php/ctr_encoretask/ubah/'.$et->id_encore_task; ?>" >
                       <i class="ace-icon fa fa-pencil bigger-130"></i>
                   </a>

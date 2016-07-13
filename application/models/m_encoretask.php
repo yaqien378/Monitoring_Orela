@@ -48,14 +48,11 @@ class m_encoretask extends CI_Model {
             ));
     }
 
-    public function edit($id, $nama, $task, $status)
+    public function edit($id, $nama)
     {
         $this->db->where('id_encore_task', $id);
         return $this->db->update('encore_task', array(
-            'id_encore_task' => $id,
-            'id_task' => $task,
-            'nama_encore_task' => $nama,
-            'status_encore_task' => $status
+            'nama_encore_task' => $nama
             ));
     }
 

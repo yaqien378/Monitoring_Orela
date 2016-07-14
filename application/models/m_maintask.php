@@ -69,5 +69,10 @@ class m_maintask extends CI_Model {
         $this->db->where('id_main_task', $id);
         return $this->db->update('main_task', array('status_main_task' => 'Y'));
     }
+
+    public function get_active()
+    {
+        return $this->db->get_where('main_task',array('status_main_task' => 'Y'))->result();
+    }
 }
 ?>

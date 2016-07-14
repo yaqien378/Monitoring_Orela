@@ -80,5 +80,16 @@ class m_encoretask extends CI_Model {
         $this->db->where('id_encore_task', $id);
         return $this->db->update('encore_task', array('status_encore_task' => 'Y'));
     }
+
+
+    public function join_all(array $cond = NULL)
+    {
+        $this->db->select('*');
+        $this->db->from('encore_task');
+        $this->db->join('task','encore_task.id_task = task.id_task');
+        if(count($cond) > 0)
+            $this->db->where($cond);
+        return $this->db->get()->result();
+    }
 }
 ?>

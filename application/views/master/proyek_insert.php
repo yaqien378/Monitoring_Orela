@@ -139,8 +139,8 @@
             <?php foreach ($proyek as $pro) { ?>
             <tr>
               <td><?php echo $pro->id_proyek; ?></td>
-              <td><?php echo $pro->id_perusahaan; ?></td>
-              <td><?php echo $pro->id_jenis_proyek; ?></td>
+              <td><?php echo $pro->nama_perusahaan; ?></td>
+              <td><?php echo $pro->nama_jenis_proyek; ?></td>
               <td><?php echo $pro->deskripsi_proyek; ?></td>
               <td><?php echo $pro->tanggal_penerimaan_proyek; ?></td>
               <td><?php echo $pro->estimasi_waktu_proyek; ?></td>

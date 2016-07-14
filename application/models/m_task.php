@@ -82,5 +82,15 @@ class m_task extends CI_Model {
         $this->db->where('id_task', $id);
         return $this->db->update('task', array('status_task' => 'Y'));
     }
+
+    public function join_all(array $cond = NULL)
+    {
+        $this->db->select('*');
+        $this->db->from('task');
+        $this->db->join('main_task','task.id_main_task = main_task.id_main_task');
+        if(count($cond) > 0)
+            $this->db->where($cond);
+        return $this->db->get()->result();
+    }
 }
 ?>

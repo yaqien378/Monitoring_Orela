@@ -81,5 +81,16 @@ class m_proyek extends CI_Model {
         $this->db->where('id_proyek', $id);
         return $this->db->update('project', array('status_proyek' => 'Y'));
     }
+
+    public function join_all(array $cond=null)
+    {
+        $this->db->select("*");
+        $this->db->from("project");
+        $this->db->join("perusahaan","project.id_perusahaan = perusahaan.id_perusahaan");
+        $this->db->join("jenis_proyek","project.id_jenis_proyek = jenis_proyek.id_jenis_proyek");
+        if ($cond > 0)
+            $this->db->where($cond);
+        return $this->db->get()->result();
+    }
 }
 ?>

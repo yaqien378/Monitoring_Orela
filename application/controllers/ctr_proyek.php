@@ -9,7 +9,7 @@ class ctr_proyek extends CI_Controller
 
         $data['perusahaan'] = $this->m_perusahaan->get_nama_perusahaan(array('status_perusahaan' => 'Y'));
         $data['jenisproyek'] = $this->m_jenisproyek->get_nama_jenisproyek(array('status_jenis_proyek' => 'Y'));
-        $data['proyek'] = $this->m_proyek->get_all();
+        $data['proyek'] = $this->m_proyek->join_all(array());
 
         $this->load->view('firstpage', $data);
 	}
